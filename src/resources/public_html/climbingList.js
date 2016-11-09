@@ -1,6 +1,6 @@
 var climbingList = function() {
 
-    var address = "http://wikthewiz.com";
+    var address = "http://localhost:8080";
     String.prototype.capitalizeFirstLetter = function() {
         return this.charAt(0).toUpperCase() + this.slice(1);
     }
