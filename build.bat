@@ -1,3 +1,10 @@
+@echo off
+setlocal
+
+call ant clean
+call make_external.bat
+call ant build
+
 rmdir dist\lib\ /q /s
 xcopy lib\* dist\lib\ /S /Y
 
