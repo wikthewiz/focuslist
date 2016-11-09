@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="10">
+    <Properties>
+        <Property name="logPath">/var/log</Property>
+    </Properties>
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+        <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [%-5level] [%logger{36}] - %msg%n"/>
+    </Console>
+    <RollingFile name="RollingFile" fileName="${sys:logPath}/focuslist.log" filePattern="${sys:logPath}/focuslist-%d{yyyy-MM-dd}-%i.log">
+        <PatternLayout>
+            <pattern>%d{HH:mm:ss.SSS} [%t] [%-5level] [%logger{36}] - %msg%n</pattern>
+        </PatternLayout>
+        <Policies>
+            <OnStartupTriggeringPolicy />
+            <SizeBasedTriggeringPolicy size="20 MB" />
+        </Policies>
+        <DefaultRolloverStrategy max="10"/>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Logger name="wikthewiz.climbinglist" level="debug" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
+    <Logger name="wikthewiz.climbinglist" level="debug" additivity="false">
+      <AppenderRef ref="RollingFile"/>
+    </Logger>
+    <Root level="info">
+      <AppenderRef ref="RollingFile"/>
+      <AppenderRef ref="Console" />
+    </Root>
+  </Loggers>
+</Configuration>
+
+
+
+

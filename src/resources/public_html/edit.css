@@ -1,0 +1,35 @@
+.remove {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    color: #fff;
+    cursor:pointer;
+}
+
+.remove:hover {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
+
+.done {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    cursor:pointer;
+}
+
+.is-done {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    cursor:pointer;
+}
+
+.done:hover {
+    color:#fff;
+    background-color:#449d44;
+    border-color: #398439
+}
+.button-group {
+    padding-top:15px;
+}

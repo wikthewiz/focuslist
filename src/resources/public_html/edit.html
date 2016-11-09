@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <!-- boostrap CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="edit.css">
+
+    <title>wikthewiz.com</title>
+  </head>
+  <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://wikthewiz.com/index.html">wikthewiz</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><span class="navbar-brand" id="user">User</span></li>
+        <li id="logout"><a href="javascript:logout()">logout</a></li>
+      </ul>
+    </div>
+    </nav>
+    <div class="container">
+    <h1>Focus climbing list</h1>
+      <h2>Bohusl&auml;n</h2>
+    <div class="row">
+      <div class="col-sm-3">
+        <h3>Martin</h3>
+        <div id="martin_bohus_list"></div>
+      </div>
+      <div class="col-sm-3">
+        <h3>Daniel</h3>
+        <div id="daniel_bohus_list"></div>
+      </div>
+      <div class="col-sm-3">
+        <h3>Patrik</h3>
+        <div id="patrik_bohus_list"></div>
+      </div>
+    </div>
+    <h2>Gothenburg</h2>
+    <div class="row">
+      <div class="col-sm-3">
+      <h3>Martin</h3>
+        <div id="martin_got_list"></div>
+      </div>
+      <div class="col-sm-3">
+        <h3>Daniel</h3>
+        <div id="daniel_got_list"></div>
+      </div>
+      <div class="col-sm-3">
+        <h3>Patrik</h3>
+        <div id="patrik_got_list"></div>
+      </div>
+    </div>
+    </div>
+     <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content"></div>
+      
+    </div>
+  </div>
+    <!-- load jquery -->
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+    <!-- boostrap JS -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   
+    <script src="edit.js"></script>
+    <script src="logout.js"></script>
+  </body>
+</html>
