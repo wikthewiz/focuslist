@@ -23,6 +23,7 @@
     background-color: #5cb85c;
     border-color: #4cae4c;
     cursor:pointer;
+    font-family: "Times New Roman";
 }
 
 .done:hover {
