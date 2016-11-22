@@ -57,6 +57,8 @@ public class Starter {
             constraintMapping.setPathSpec("*edit.html*");
             constraintMapping.setPathSpec("/service/save");
             constraintMapping.setPathSpec("/service/authenticated");
+            constraintMapping.setPathSpec("/dragula/dragula.min.css");
+            constraintMapping.setPathSpec("/dragula/dragula.min.js");
 
             ConstraintSecurityHandler securityHandler = new ConstraintSecurityHandler();
             securityHandler.addConstraintMapping(constraintMapping);
@@ -103,6 +105,7 @@ public class Starter {
         resourceHandler.setDirectoriesListed(true);
         resourceHandler.setWelcomeFiles(new String[] { "index.html" });
         resourceHandler.setResourceBase(Properties.getProperty("resourceBasePath"));
+        resourceHandler.setCacheControl("Cache-Control: max-age=31536000");
         context.insertHandler(resourceHandler);
     }
 

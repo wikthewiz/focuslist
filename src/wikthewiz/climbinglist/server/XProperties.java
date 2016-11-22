@@ -15,6 +15,7 @@ import java.util.Properties;
  * will result in <code>getProperty("C")</code>
  * returning the value "1234567890 plus more".
  */
+@SuppressWarnings("serial")
 public class XProperties extends Properties {
 
 

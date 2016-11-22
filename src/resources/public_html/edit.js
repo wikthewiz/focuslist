@@ -145,6 +145,7 @@ var edit = function() {
             if (route.IsDone){
                 isDone = "is-done";
             } 
+
             $inputgroup
               .addClass("input-group")
               .append($removeBtn)
@@ -197,6 +198,7 @@ var edit = function() {
             }
             $list.append($elem);
         });
+        
     };
 
     String.prototype.capitalizeFirstLetter = function() {
@@ -248,6 +250,19 @@ var edit = function() {
           return $toggleButton;        
     }
 
+    var fixDragDrop = function ($list) {
+        dragula(
+                [$list.get(0), $list.get(0)], {
+                    moves: function (el, container, handle) {
+                        return !el.classList.contains("btn");
+                    },
+                    accepts: function (el, target, source, sibling) {
+                        // do not allow to drag something above the button
+                        return !sibling || !sibling.classList.contains("btn");
+                    }
+                });
+    };
+
     $.get(address + "/service/load")
     .done(function(data) {
         if (currentUser.length === 0) {
@@ -262,13 +277,17 @@ var edit = function() {
             var userId = "#" + user;
             var $bohusList = $(userId  + "_bohus_list");
             var $gotList = $(userId  + "_got_list");
+
+            fixDragDrop($bohusList);
+            fixDragDrop($gotList);
+
             if (user === currentUser) {
                 $bohusList.append(createToggleButton());
                 loadEditList($bohusList, user, bohusList, "bohus");
-
+    
                 $gotList.append(createToggleButton());
                 loadEditList($gotList, user, gotList, "got");
-
+    
                 addButtons($gotList);
             } else {
                 loadList($bohusList, data[user.capitalizeFirstLetter()].Bohus);
